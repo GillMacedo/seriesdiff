@@ -1,0 +1,2 @@
+# broken
+./main.go:4:2: undefined: undefined

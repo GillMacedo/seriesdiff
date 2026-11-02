@@ -1,0 +1,14 @@
+{
+  "name": "seriesdiff-marketplace",
+  "description": "Marketplace for seriesdiff, which compares two Prometheus /metrics scrapes.",
+  "owner": {
+    "name": "Giulliano Macedo"
+  },
+  "plugins": [
+    {
+      "name": "seriesdiff",
+      "source": "./plugin",
+      "description": "Compare Prometheus /metrics scrapes from the base branch and your change, so renamed metrics, removed labels and cardinality growth show up in review."
+    }
+  ]
+}

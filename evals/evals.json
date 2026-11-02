@@ -1,0 +1,36 @@
+[
+  {
+    "skills": ["comparing-prometheus-metrics"],
+    "query": "Does my branch break any of our Prometheus alerts?",
+    "expected_behavior": [
+      "Builds and runs the base and the working tree with the same workload and saves both /metrics scrapes with curl",
+      "Runs seriesdiff.go compare with --refs pointing at the repository's rule and dashboard directories",
+      "Lists removed metrics, removed labels and lost label values with the rule lines that use them, and finds the cause of each in the diff"
+    ]
+  },
+  {
+    "skills": ["comparing-prometheus-metrics"],
+    "query": "Here are /metrics from main and from my PR in base.prom and head.prom. Will this blow up cardinality?",
+    "expected_behavior": [
+      "Runs seriesdiff.go compare on the two files without scraping anything",
+      "Reports ID-like label values and series growth with the label responsible, and finds where the label value comes from in the code",
+      "Doesn't edit code unless asked"
+    ]
+  },
+  {
+    "skills": ["comparing-prometheus-metrics"],
+    "query": "seriesdiff exited with code 2 and printed a warning that head may be cut off. Can I ignore it?",
+    "expected_behavior": [
+      "Explains that the comparison can't be trusted until the head scrape is checked",
+      "Suggests scraping again and comparing the end of the file, and using --trust-ends only if the change really removes only the last metrics"
+    ]
+  },
+  {
+    "skills": ["comparing-prometheus-metrics"],
+    "query": "seriesdiff says no changes, so my refactor didn't touch any metrics, right?",
+    "expected_behavior": [
+      "Explains that only code paths the workload ran are covered",
+      "Doesn't claim the metrics are unchanged"
+    ]
+  }
+]

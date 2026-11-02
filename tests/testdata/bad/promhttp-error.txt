@@ -1,0 +1,3 @@
+An error has occurred while serving metrics:
+
+error collecting metric Desc{fqName: "db_rows", help: "Rows.", constLabels: {}, variableLabels: {}}: database connection refused

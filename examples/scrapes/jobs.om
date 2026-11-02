@@ -1,0 +1,26 @@
+# HELP job_duration_seconds Job duration.
+# TYPE job_duration_seconds histogram
+job_duration_seconds_bucket{le="0.1"} 0
+job_duration_seconds_bucket{le="1.0"} 1 # {trace_id="b7ad6b7169203331"} 0.4 1.7936476468940475e+09
+job_duration_seconds_bucket{le="10.0"} 2
+job_duration_seconds_bucket{le="+Inf"} 2
+job_duration_seconds_sum 3.4
+job_duration_seconds_count 2
+job_duration_seconds_created 1.793647646894031e+09
+# HELP job_payload_bytes Job payload size.
+# TYPE job_payload_bytes summary
+job_payload_bytes{quantile="0.5"} 512.0
+job_payload_bytes{quantile="0.99"} 2048.0
+job_payload_bytes_sum 2560.0
+job_payload_bytes_count 2
+job_payload_bytes_created 1.7936476468940392e+09
+# HELP jobs_in_flight Jobs running now.
+# TYPE jobs_in_flight gauge
+jobs_in_flight 2.0
+# HELP jobs_processed Jobs processed by queue.
+# TYPE jobs_processed counter
+jobs_processed_total{queue="billing \"eu\"\\west"} 1.0
+jobs_processed_created{queue="billing \"eu\"\\west"} 1.793647646894047e+09
+jobs_processed_total{queue="email"} 2.0 # {trace_id="0af7651916cd43dd"} 2.0 1.7936476468940463e+09
+jobs_processed_created{queue="email"} 1.7936476468940456e+09
+# EOF

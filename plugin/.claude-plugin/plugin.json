@@ -1,0 +1,13 @@
+{
+  "name": "seriesdiff",
+  "version": "0.1.0",
+  "description": "Compare Prometheus /metrics scrapes from the base branch and your change: removed or renamed metrics, type changes, removed labels, bucket changes, ID-like label values and series growth, with the alerts and dashboards that use them.",
+  "author": {
+    "name": "Giulliano Macedo",
+    "url": "https://github.com/GillMacedo"
+  },
+  "homepage": "https://github.com/GillMacedo/seriesdiff",
+  "repository": "https://github.com/GillMacedo/seriesdiff",
+  "license": "MIT",
+  "keywords": ["prometheus", "metrics", "cardinality", "observability", "grafana", "alerting", "code-review", "go"]
+}

@@ -1,0 +1,25 @@
+{
+  "title": "Orders",
+  "panels": [
+    {
+      "title": "Requests by route",
+      "type": "timeseries",
+      "targets": [{ "expr": "sum by (route) (rate(http_requests_total[5m]))" }]
+    },
+    {
+      "title": "Payment errors by reason",
+      "type": "timeseries",
+      "targets": [{ "expr": "sum by (reason) (rate(payment_errors_total[5m]))" }]
+    },
+    {
+      "title": "Cache growth",
+      "type": "stat",
+      "targets": [{ "expr": "rate(cache_entries[1h])" }]
+    },
+    {
+      "title": "Queue depth",
+      "type": "timeseries",
+      "targets": [{ "expr": "order_queue_depth" }]
+    }
+  ]
+}
